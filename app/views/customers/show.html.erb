@@ -5,6 +5,26 @@
 <div>
   <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
   <%= link_to "Back to customers", customers_path %>
-
   <%= button_to "Destroy this customer", @customer, method: :delete %>
 </div>
+
+
+<div id="orders">
+  <h3>Orders:</h3>
+  <% if @customer.orders.present? %>
+    <% @customer.orders.each do |order| %>
+  
+    <%= render order  %>
+  <% end %>
+  <% else %>
+    <p>No orders</p>
+    <%= link_to "Create Order", new_order_path %>
+  <% end %>
+
+</div>
+
+
+
+
+
+
