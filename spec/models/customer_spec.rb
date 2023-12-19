@@ -45,3 +45,4 @@ RSpec.describe Customer, type: :model do
     expect(subject.full_name).to eq("Jack Smith")
   end
 end
+

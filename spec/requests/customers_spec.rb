@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe "CustomersControllers", type: :request do
   describe "get customers_path" do
     it "renders the index view" do
@@ -20,8 +21,7 @@ RSpec.describe "CustomersControllers", type: :request do
   end
 describe "get new_customer_path" do
     it "renders the :new template" do
-    customer = FactoryBot.create(:customer)
-    get new_customer_path(id: customer.id)
+    get new_customer_path
     expect(response).to render_template(:new)
    end
 end  

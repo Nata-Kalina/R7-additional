@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
         @order.destroy
 
         respond_to do |format|
-            format.html { redirect_to orders_url, notice: "Order was successfully deleted." }
+            format.html { redirect_to customers_path, notice: "Order was successfully deleted." }
             format.json { head :no_content }
           end
     end
