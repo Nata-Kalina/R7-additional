@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root to: 'customers#index'
   resources :customers
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :orders
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

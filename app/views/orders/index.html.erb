@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>All Orders</h1>
+
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #000;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #000;">Order ID</th>
+      <th style="border: 1px solid #000;">Product Name</th>
+      <th style="border: 1px solid #000;">Product Count</th>
+      <th style="border: 1px solid #000;">Customer ID</th>
+      <th colspan="3" style="border: 1px solid #000;">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <%= render order %>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+<p><%= link_to "Add Order", new_order_path %></p>
+<%= link_to "Back to customers", customers_path %>
+
