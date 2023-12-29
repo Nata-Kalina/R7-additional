@@ -1,13 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @customer %>
 
 <div>
-  <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
-  <%= link_to "Back to customers", customers_path %>
-  <%= button_to "Destroy this customer", @customer, method: :delete %>
+  <%= link_to "Edit this customer", edit_customer_path(@customer), class:"btn btn-primary" %> |
+  <%= link_to "Back to customers", customers_path, class:"btn btn-primary" %>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-<%= @customer.id%>">Delete</button>
 </div>
 
+<%= render "deleteModal", customer: @customer %>
 
 <div id="orders">
   <h3>Orders:</h3>
@@ -28,10 +27,10 @@
     <% end %>
   </tbody>
   </table>
-  <%= link_to "Add Order", new_order_path %>
+  <%= link_to "Add Order", new_order_path, class:"btn btn-primary" %>
   <% else %>
     <p>No orders</p>
-    <%= link_to "Create Order", new_order_path %>
+    <%= link_to "Create Order", new_order_path, class:"btn btn-primary" %>
   <% end %>
 
 </div>

@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :customers
   resources :orders
 
+  delete "/customers/customerAndOrders/:id", to: "customers#destroy_with_orders", as: :destroy_with_orders
+
 end

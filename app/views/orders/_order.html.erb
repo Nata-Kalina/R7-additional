@@ -5,10 +5,10 @@
   <td style="border: 1px solid #000;"><%= order.product_name %></td>
   <td style="border: 1px solid #000;"><%= order.product_count %></td>
   <td style="border: 1px solid #000;"><%= order.customer_id %></td>
-  <td style="border: 1px solid #000;"><%= link_to 'Show', order %></td>
-  <td style="border: 1px solid #000;"><%= link_to 'Edit', edit_order_path(order) %></td>
+  <td style="border: 1px solid #000;"><%= link_to 'Show', order, class:"btn btn-primary" %></td>
+  <td style="border: 1px solid #000;"><%= link_to 'Edit', edit_order_path(order), class:"btn btn-primary" %></td>
   <td style="border: 1px solid #000;">
-    <%= button_to 'Delete', order, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    <%= button_to 'Delete', order, method: :delete, data: { turbo_confirm: "Are you sure?" }, class:"btn btn-primary" %>
   </td>
 </tr>
 
