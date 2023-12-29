@@ -1,9 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Customers</h1>
 
-<div id="customer">
-<table style="text-align:center; border: 1px solid black; border-collapse: collapse;">
+<div id="customer" class="mx-auto">
+<table style="text-align:center; width: 100%; border: 1px solid black; border-collapse: collapse;">
   <thead>
     <tr>
       <th style="border: 1px solid black;">Customer Full Name</th>
@@ -21,15 +19,16 @@
           <%=customer.orders.count%>
         </td>
         <td>
-          <%= link_to "Show", customer %>
+          <%= link_to "Show", customer, class:"btn btn-primary"%> 
         </td>
         <td>
-          <%= link_to "Edit", edit_customer_path(customer) %>
+          <%= link_to "Edit", edit_customer_path(customer), class:"btn btn-primary" %>
         </td>
         <td>
-          <%= button_to "Delete", customer, method: :delete, data: { turbo_confirm: "Are you sure?" }  %>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-<%= customer.id%>">Delete</button> 
         </td>
       </tr>
+    <%= render partial: 'deleteModal', locals: { customer: customer } %>
     <% end %>
   <tbody>
 </table>
@@ -37,7 +36,7 @@
 
 <br>
 
-<p><%= link_to "New customer", new_customer_path %></p>
-<p><%= link_to "All orders", orders_path %></p>
+<p><%= link_to "New customer", new_customer_path, class:"btn btn-primary" %></p>
+<p><%= link_to "All orders", orders_path, class:"btn btn-primary"  %></p>
 
 
